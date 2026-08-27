@@ -209,7 +209,12 @@
 
 .tip-box h3 {
   color: var(--purple-dark);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
+}
+
+.tip-box > p {
+  margin: 0 0 14px;
+  font-weight: 700;
 }
 
 /* Responsive */
