@@ -42,6 +42,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .site-header .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,6 +90,17 @@ ul { list-style: none; margin: 0; padding: 0; }
 .nav-links a.active {
   background: var(--sora);
   color: var(--pink-dark);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--pink-dark);
+  cursor: pointer;
+  padding: 6px 8px;
 }
 
 /* Buttons */
@@ -156,5 +168,29 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* Responsive */
 @media (max-width: 560px) {
-  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: none;
+    overflow-x: visible;
+    white-space: normal;
+    background: var(--cream);
+    border: 1px solid var(--cream-deep);
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links .divider { display: none; }
+
+  .nav-links a { padding: 12px 14px; }
 }
