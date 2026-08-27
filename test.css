@@ -49,7 +49,7 @@
   margin-bottom: 8px;
 }
 
-.question-card h3 {
+.question-card h2 {
   font-size: 1.15rem;
   margin: 0 0 8px;
   line-height: 1.4;
@@ -98,7 +98,7 @@
 
 .result-card .icon-big { font-size: 3.2rem; }
 
-.result-card h2 {
+.result-card h3 {
   font-size: 1.7rem;
   font-weight: 800;
   color: var(--pink-dark);

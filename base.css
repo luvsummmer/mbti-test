@@ -100,7 +100,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   line-height: 1;
   color: var(--pink-dark);
   cursor: pointer;
-  padding: 6px 8px;
+  padding: 10px 12px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /* Buttons */

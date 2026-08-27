@@ -108,7 +108,7 @@
   flex: none;
 }
 
-.group-set-label h3 { margin: 0; font-size: 1.15rem; font-weight: 800; }
+.group-set-label h2 { margin: 0; font-size: 1.15rem; font-weight: 800; }
 .group-set-label span.desc { color: var(--text-sub); font-size: 0.88rem; }
 
 .group-set { margin-bottom: 44px; }
@@ -162,7 +162,7 @@
   margin-bottom: 24px;
 }
 
-.type-card h2 {
+.type-card h3 {
   font-size: 1.3rem;
   font-weight: 800;
   color: var(--pink-dark);

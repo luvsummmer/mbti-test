@@ -50,7 +50,7 @@ function renderResultCard(containerId, candidates, scores, topCode) {
   card.className = 'result-card';
   card.innerHTML =
     '<span class="icon-big">' + top.icon + '</span>' +
-    '<h2>' + top.code + ' · ' + top.alias + '</h2>' +
+    '<h3>' + top.code + ' · ' + top.alias + '</h3>' +
     '<p class="desc">' + top.desc + '</p>';
 
   const barsWrap = document.createElement('div');
