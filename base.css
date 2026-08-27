@@ -1,16 +1,15 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 
 :root {
-  --cream: #F3F0EB;
-  --cream-deep: #E8E2D3;
-  --purple: #FFC0FC;
-  --purple-dark: #EC5EFFFF;
-  --purple-light: #C1D7FF;
+  --cream: #FAF6EC;
+  --cream-deep: #F0E8D4;
+  --pink: #FFC0FC;
+  --pink-dark: #E0449E;
+  --sora: #C1D7FF;
   --text-main: #0B0620;
   --text-sub: #6E6A80;
   --white: #FFFFFF;
-  --shadow: 0 8px 24px rgba(248, 120, 73, 0.14);
-  --pink: #FFC0FC;
+  --shadow: 0 8px 24px rgba(224, 68, 158, 0.16);
 }
 
 * { box-sizing: border-box; }
@@ -52,7 +51,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .logo {
   font-weight: 800;
   font-size: 1.15rem;
-  color: var(--purple-dark);
+  color: var(--pink-dark);
   display: flex;
   align-items: center;
   gap: 6px;
@@ -88,8 +87,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: var(--purple-light);
-  color: var(--purple-dark);
+  background: var(--sora);
+  color: var(--pink-dark);
 }
 
 /* Buttons */
@@ -110,18 +109,18 @@ ul { list-style: none; margin: 0; padding: 0; }
 .btn:hover { transform: translateY(-2px); }
 
 .btn-primary {
-  background: var(--purple);
+  background: var(--pink);
   color: #fff;
   box-shadow: var(--shadow);
 }
-.btn-primary:hover { background: var(--purple-dark); }
+.btn-primary:hover { background: var(--pink-dark); }
 
 .btn-outline {
   background: transparent;
-  color: var(--purple-dark);
-  border: 2px solid var(--purple);
+  color: var(--pink-dark);
+  border: 2px solid var(--pink);
 }
-.btn-outline:hover { background: var(--purple-light); }
+.btn-outline:hover { background: var(--sora); }
 
 .btn-block { width: 100%; }
 
@@ -153,7 +152,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   transition: background 0.15s, color 0.15s;
 }
 
-.footer-links a:hover { background: var(--purple-light); color: var(--purple-dark); }
+.footer-links a:hover { background: var(--sora); color: var(--pink-dark); }
 
 /* Responsive */
 @media (max-width: 560px) {

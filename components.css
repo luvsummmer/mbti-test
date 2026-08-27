@@ -6,8 +6,8 @@
 
 .hero .eyebrow {
   display: inline-block;
-  background: var(--purple-light);
-  color: var(--purple-dark);
+  background: var(--sora);
+  color: var(--pink-dark);
   padding: 6px 16px;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -62,7 +62,7 @@
 }
 
 .group-card:hover {
-  border-color: var(--purple);
+  border-color: var(--pink);
   transform: translateY(-4px);
 }
 
@@ -76,7 +76,7 @@
   font-size: 1.2rem;
   font-weight: 800;
   margin: 0 0 6px;
-  color: var(--purple-dark);
+  color: var(--pink-dark);
 }
 
 .group-card p {
@@ -95,7 +95,7 @@
 }
 
 .group-set-label .num {
-  background: var(--purple);
+  background: var(--pink);
   color: #fff;
   width: 26px;
   height: 26px;
@@ -117,7 +117,7 @@
 .group-hero {
   padding: 56px 0 40px;
   text-align: center;
-  background: var(--purple-light);
+  background: var(--sora);
   border-radius: 0 0 32px 32px;
 }
 
@@ -126,7 +126,7 @@
 .group-hero h1 {
   font-size: clamp(1.6rem, 4vw, 2.3rem);
   font-weight: 800;
-  color: var(--purple-dark);
+  color: var(--pink-dark);
   margin: 10px 0 12px;
 }
 
@@ -146,7 +146,7 @@
 
 .trait-tags span {
   background: #fff;
-  color: var(--purple-dark);
+  color: var(--pink-dark);
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -165,7 +165,7 @@
 .type-card h2 {
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--purple-dark);
+  color: var(--pink-dark);
   margin: 0 0 4px;
 }
 
@@ -197,7 +197,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--purple);
+  background: var(--pink);
 }
 
 .tip-box {
@@ -208,7 +208,7 @@
 }
 
 .tip-box h3 {
-  color: var(--purple-dark);
+  color: var(--pink-dark);
   margin: 0 0 10px;
 }
 
