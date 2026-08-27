@@ -31,8 +31,8 @@
 
 .quiz-nav-btn:hover { color: var(--pink-dark); }
 
-.question-card { display: none; }
-.question-card.active { display: block; }
+.quiz-paged .question-card { display: none; }
+.quiz-paged .question-card.active { display: block; }
 
 .question-card {
   background: var(--white);
