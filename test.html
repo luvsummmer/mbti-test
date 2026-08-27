@@ -42,89 +42,115 @@
       <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
 
       <form id="testForm">
-        <div class="question-card">
-          <p class="q-num">Q1</p>
-          <h3>새로운 과목이나 단원을 처음 배우기 시작할 때, 나는 어떤 방식으로 접근하나요?</h3>
-          <p class="q-desc">예를 들어 새 학기에 낯선 과목 교과서를 처음 펼쳤을 때를 떠올려보세요.</p>
-          <label class="option"><input type="radio" name="q1" value="N">먼저 전체 흐름과 핵심 개념을 훑어보며 큰 그림부터 그려본다</label>
-          <label class="option"><input type="radio" name="q1" value="S">구체적인 예제와 세부 내용을 하나하나 확인하며 차근차근 시작한다</label>
+        <div class="quiz-nav">
+          <button type="button" id="prevBtn" class="quiz-nav-btn" style="display:none;">← 이전 문항</button>
         </div>
 
-        <div class="question-card">
-          <p class="q-num">Q2</p>
-          <h3>수업 내용을 노트나 필기 앱에 정리할 때, 나는 주로 어떤 식으로 적어두나요?</h3>
-          <p class="q-desc">정리 방식만 봐도 정보를 다루는 습관이 드러나곤 해요.</p>
-          <label class="option"><input type="radio" name="q2" value="N">개념들이 서로 어떻게 연결되는지, 어떤 의미인지를 중심으로 정리한다</label>
-          <label class="option"><input type="radio" name="q2" value="S">교재나 자료에 나온 사실과 순서를 최대한 그대로 옮겨 적는다</label>
-        </div>
+        <div class="question-flow" id="questionFlow">
+          <div class="question-card">
+            <p class="q-num">Q1 / 10</p>
+            <h3>새로운 과목이나 단원을 처음 배우기 시작할 때, 나는 어떤 방식으로 접근하나요?</h3>
+            <p class="q-desc">예를 들어 새 학기에 낯선 과목 교과서를 처음 펼쳤을 때를 떠올려보세요.</p>
+            <label class="option"><input type="radio" name="q1" value="N2">먼저 전체 흐름과 핵심 개념을 훑어보며 큰 그림부터 그려본다</label>
+            <label class="option"><input type="radio" name="q1" value="N1">목차나 요약부터 슬쩍 보고 나서 세부 내용으로 들어간다</label>
+            <label class="option"><input type="radio" name="q1" value="S1">일단 앞부분부터 순서대로 읽으며 진도를 나간다</label>
+            <label class="option"><input type="radio" name="q1" value="S2">구체적인 예제와 세부 내용을 하나하나 확인하며 차근차근 시작한다</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q3</p>
-          <h3>새로운 유형의 문제를 마주쳤을 때, 나는 어떤 방식으로 풀이에 접근하나요?</h3>
-          <p class="q-desc">정답을 찾아가는 과정에서의 습관을 생각해보세요.</p>
-          <label class="option"><input type="radio" name="q3" value="N">문제 속에 숨은 패턴이나 원리를 먼저 찾아내 다른 상황에도 응용해본다</label>
-          <label class="option"><input type="radio" name="q3" value="S">이미 배운 공식과 절차를 순서에 맞게 하나씩 차례로 적용한다</label>
-        </div>
+          <div class="question-card">
+            <p class="q-num">Q2 / 10</p>
+            <h3>수업 내용을 노트나 필기 앱에 정리할 때, 나는 주로 어떤 식으로 적어두나요?</h3>
+            <p class="q-desc">정리 방식만 봐도 정보를 다루는 습관이 드러나곤 해요.</p>
+            <label class="option"><input type="radio" name="q2" value="N2">개념들이 서로 어떻게 연결되는지, 어떤 의미인지를 중심으로 정리한다</label>
+            <label class="option"><input type="radio" name="q2" value="N1">핵심 개념 위주로 요약하고 화살표나 도식으로 관계를 표시한다</label>
+            <label class="option"><input type="radio" name="q2" value="S1">선생님이 말한 순서대로 최대한 놓치지 않고 받아 적는다</label>
+            <label class="option"><input type="radio" name="q2" value="S2">교재나 자료에 나온 사실과 순서를 최대한 그대로 옮겨 적는다</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q4</p>
-          <h3>시간이 꽤 지났는데도 공부했던 내용이 여전히 또렷하게 기억나는 건 어떤 순간인가요?</h3>
-          <p class="q-desc">오래 남는 기억의 방식에도 사람마다 차이가 있어요.</p>
-          <label class="option"><input type="radio" name="q4" value="N">전체 맥락과 큰 그림 속에서 그 의미를 제대로 이해했다고 느꼈을 때</label>
-          <label class="option"><input type="radio" name="q4" value="S">직접 손으로 여러 번 써보고 반복해서 연습했을 때</label>
-        </div>
+          <div class="question-card">
+            <p class="q-num">Q3 / 10</p>
+            <h3>새로운 유형의 문제를 마주쳤을 때, 나는 어떤 방식으로 풀이에 접근하나요?</h3>
+            <p class="q-desc">정답을 찾아가는 과정에서의 습관을 생각해보세요.</p>
+            <label class="option"><input type="radio" name="q3" value="N2">문제 속에 숨은 패턴이나 원리를 먼저 찾아내 다른 상황에도 응용해본다</label>
+            <label class="option"><input type="radio" name="q3" value="N1">비슷한 유형의 문제와 어떤 공통점이 있는지부터 생각해본다</label>
+            <label class="option"><input type="radio" name="q3" value="S1">일단 배운 공식이 있는지부터 확인하고 대입해본다</label>
+            <label class="option"><input type="radio" name="q3" value="S2">이미 배운 공식과 절차를 순서에 맞게 하나씩 차례로 적용한다</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q5</p>
-          <h3>어려운 개념을 정말로 이해했는지 스스로 점검할 때, 나는 어떤 기준으로 판단하나요?</h3>
-          <p class="q-desc">이해했다고 느끼는 기준은 사람마다 조금씩 달라요.</p>
-          <label class="option"><input type="radio" name="q5" value="T">앞뒤 논리가 맞아떨어지는지 스스로 조목조목 따져본다</label>
-          <label class="option"><input type="radio" name="q5" value="F">이 내용이 나에게, 혹은 현실에서 어떤 의미가 있는지 마음으로 느껴본다</label>
-        </div>
+          <div class="question-card">
+            <p class="q-num">Q4 / 10</p>
+            <h3>시간이 꽤 지났는데도 공부했던 내용이 여전히 또렷하게 기억나는 건 어떤 순간인가요?</h3>
+            <p class="q-desc">오래 남는 기억의 방식에도 사람마다 차이가 있어요.</p>
+            <label class="option"><input type="radio" name="q4" value="N2">전체 맥락과 큰 그림 속에서 그 의미를 제대로 이해했다고 느꼈을 때</label>
+            <label class="option"><input type="radio" name="q4" value="N1">왜 그런 결과가 나오는지 스스로 납득이 됐을 때</label>
+            <label class="option"><input type="radio" name="q4" value="S1">여러 번 풀어보면서 손에 익었을 때</label>
+            <label class="option"><input type="radio" name="q4" value="S2">직접 손으로 여러 번 써보고 반복해서 연습했을 때</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q6</p>
-          <h3>친구들과 함께 스터디 그룹으로 공부할 때, 나는 주로 어떤 역할을 맡게 되나요?</h3>
-          <p class="q-desc">그룹 안에서 자연스럽게 하게 되는 행동을 떠올려보세요.</p>
-          <label class="option"><input type="radio" name="q6" value="T">효율과 결과를 우선해서 역할부터 명확하게 나누자고 제안한다</label>
-          <label class="option"><input type="radio" name="q6" value="F">서로 격려해주고 편안한 분위기를 만드는 데 더 신경 쓴다</label>
-        </div>
+          <div class="question-card">
+            <p class="q-num">Q5 / 10</p>
+            <h3>어려운 개념을 정말로 이해했는지 스스로 점검할 때, 나는 어떤 기준으로 판단하나요?</h3>
+            <p class="q-desc">이해했다고 느끼는 기준은 사람마다 조금씩 달라요.</p>
+            <label class="option"><input type="radio" name="q5" value="T2">앞뒤 논리가 맞아떨어지는지 스스로 조목조목 따져본다</label>
+            <label class="option"><input type="radio" name="q5" value="T1">다른 사람에게 조리 있게 설명할 수 있는지 확인해본다</label>
+            <label class="option"><input type="radio" name="q5" value="F1">왠지 모르게 익숙하고 편안하게 느껴지는지로 판단한다</label>
+            <label class="option"><input type="radio" name="q5" value="F2">이 내용이 나에게, 혹은 현실에서 어떤 의미가 있는지 마음으로 느껴본다</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q7</p>
-          <h3>시험 성적이 기대했던 것보다 안 좋게 나왔을 때, 나는 보통 어떻게 반응하나요?</h3>
-          <p class="q-desc">실망스러운 결과 앞에서의 첫 반응을 생각해보세요.</p>
-          <label class="option"><input type="radio" name="q7" value="T">감정보다 먼저 원인을 냉정하게 분석해서 바로 다음 계획을 수정한다</label>
-          <label class="option"><input type="radio" name="q7" value="F">속상한 마음을 먼저 충분히 추스르고 나서야 다시 시작할 힘이 난다</label>
-        </div>
+          <div class="question-card">
+            <p class="q-num">Q6 / 10</p>
+            <h3>친구들과 함께 스터디 그룹으로 공부할 때, 나는 주로 어떤 역할을 맡게 되나요?</h3>
+            <p class="q-desc">그룹 안에서 자연스럽게 하게 되는 행동을 떠올려보세요.</p>
+            <label class="option"><input type="radio" name="q6" value="T2">효율과 결과를 우선해서 역할부터 명확하게 나누자고 제안한다</label>
+            <label class="option"><input type="radio" name="q6" value="T1">각자 잘하는 부분을 맡기며 진도를 효율적으로 나가려 한다</label>
+            <label class="option"><input type="radio" name="q6" value="F1">다들 잘 따라오고 있는지 눈치껏 살피며 맞춰준다</label>
+            <label class="option"><input type="radio" name="q6" value="F2">서로 격려해주고 편안한 분위기를 만드는 데 더 신경 쓴다</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q8</p>
-          <h3>시험 기간이 다가와서 공부 계획을 세울 때, 나는 어떤 스타일에 더 가까운가요?</h3>
-          <p class="q-desc">계획을 세우는 방식만 봐도 성향이 잘 드러나요.</p>
-          <label class="option"><input type="radio" name="q8" value="J">미리 세부 일정표를 꼼꼼하게 짜두고 최대한 그대로 지키려 한다</label>
-          <label class="option"><input type="radio" name="q8" value="P">대략적인 방향만 정해두고 그때그때 상황에 맞춰 유연하게 조정한다</label>
-        </div>
+          <div class="question-card">
+            <p class="q-num">Q7 / 10</p>
+            <h3>시험 성적이 기대했던 것보다 안 좋게 나왔을 때, 나는 보통 어떻게 반응하나요?</h3>
+            <p class="q-desc">실망스러운 결과 앞에서의 첫 반응을 생각해보세요.</p>
+            <label class="option"><input type="radio" name="q7" value="T2">감정보다 먼저 원인을 냉정하게 분석해서 바로 다음 계획을 수정한다</label>
+            <label class="option"><input type="radio" name="q7" value="T1">속상하긴 해도 금방 원인 분석으로 넘어간다</label>
+            <label class="option"><input type="radio" name="q7" value="F1">속상한 마음이 좀 가시고 나서야 원인을 들여다본다</label>
+            <label class="option"><input type="radio" name="q7" value="F2">속상한 마음을 먼저 충분히 추스르고 나서야 다시 시작할 힘이 난다</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q9</p>
-          <h3>과제나 수행평가 마감일이 다가올 때, 나는 보통 어떻게 움직이나요?</h3>
-          <p class="q-desc">마감을 대하는 태도에도 뚜렷한 차이가 있어요.</p>
-          <label class="option"><input type="radio" name="q9" value="J">마감일보다 훨씬 앞서서 미리 끝내 놓아야 마음이 편하다</label>
-          <label class="option"><input type="radio" name="q9" value="P">마감 직전이 되어서야 몰아붙이듯 집중력이 확 올라온다</label>
-        </div>
+          <div class="question-card">
+            <p class="q-num">Q8 / 10</p>
+            <h3>시험 기간이 다가와서 공부 계획을 세울 때, 나는 어떤 스타일에 더 가까운가요?</h3>
+            <p class="q-desc">계획을 세우는 방식만 봐도 성향이 잘 드러나요.</p>
+            <label class="option"><input type="radio" name="q8" value="J2">미리 세부 일정표를 꼼꼼하게 짜두고 최대한 그대로 지키려 한다</label>
+            <label class="option"><input type="radio" name="q8" value="J1">큰 계획은 미리 세워두되 세부는 조금씩 조정한다</label>
+            <label class="option"><input type="radio" name="q8" value="P1">대략적인 순서만 정해두고 나머진 그때그때 정한다</label>
+            <label class="option"><input type="radio" name="q8" value="P2">대략적인 방향만 정해두고 그때그때 상황에 맞춰 유연하게 조정한다</label>
+          </div>
 
-        <div class="question-card">
-          <p class="q-num">Q10</p>
-          <h3>평소 공부하는 환경이나 책상 정리 상태는 어떤 편인가요?</h3>
-          <p class="q-desc">물리적인 공간을 다루는 방식에도 성향이 묻어나요.</p>
-          <label class="option"><input type="radio" name="q10" value="J">정해진 자리와 루틴이 딱 갖춰져 있어야 마음 편하게 집중할 수 있다</label>
-          <label class="option"><input type="radio" name="q10" value="P">그때그때 기분과 상황에 따라 자유롭게 바꿔가며 공부한다</label>
+          <div class="question-card">
+            <p class="q-num">Q9 / 10</p>
+            <h3>과제나 수행평가 마감일이 다가올 때, 나는 보통 어떻게 움직이나요?</h3>
+            <p class="q-desc">마감을 대하는 태도에도 뚜렷한 차이가 있어요.</p>
+            <label class="option"><input type="radio" name="q9" value="J2">마감일보다 훨씬 앞서서 미리 끝내 놓아야 마음이 편하다</label>
+            <label class="option"><input type="radio" name="q9" value="J1">여유 있게 끝내는 편이지만 가끔 살짝 미루기도 한다</label>
+            <label class="option"><input type="radio" name="q9" value="P1">마감이 가까워져야 슬슬 속도가 붙기 시작한다</label>
+            <label class="option"><input type="radio" name="q9" value="P2">마감 직전이 되어서야 몰아붙이듯 집중력이 확 올라온다</label>
+          </div>
+
+          <div class="question-card">
+            <p class="q-num">Q10 / 10</p>
+            <h3>평소 공부하는 환경이나 책상 정리 상태는 어떤 편인가요?</h3>
+            <p class="q-desc">물리적인 공간을 다루는 방식에도 성향이 묻어나요.</p>
+            <label class="option"><input type="radio" name="q10" value="J2">정해진 자리와 루틴이 딱 갖춰져 있어야 마음 편하게 집중할 수 있다</label>
+            <label class="option"><input type="radio" name="q10" value="J1">대체로 익숙한 자리에서 공부하는 걸 선호한다</label>
+            <label class="option"><input type="radio" name="q10" value="P1">장소를 자주 바꿔가며 기분 전환하는 걸 좋아한다</label>
+            <label class="option"><input type="radio" name="q10" value="P2">그때그때 기분과 상황에 따라 자유롭게 바꿔가며 공부한다</label>
+          </div>
         </div>
 
         <p id="formError" style="color:#D64545; text-align:center; font-weight:700; min-height:1.4em;"></p>
         <div class="test-actions">
-          <button type="button" id="submitBtn" class="btn btn-primary btn-block">결과 확인하기</button>
+          <button type="button" id="submitBtn" class="btn btn-primary btn-block" style="display:none;">결과 확인하기</button>
         </div>
       </form>
 

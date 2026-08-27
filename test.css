@@ -14,6 +14,26 @@
   transition: width 0.3s;
 }
 
+.quiz-nav {
+  min-height: 32px;
+  margin-bottom: 4px;
+}
+
+.quiz-nav-btn {
+  background: none;
+  border: none;
+  padding: 6px 0;
+  color: var(--text-sub);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.quiz-nav-btn:hover { color: var(--pink-dark); }
+
+.question-card { display: none; }
+.question-card.active { display: block; }
+
 .question-card {
   background: var(--white);
   border-radius: 20px;

@@ -9,7 +9,11 @@ const GROUPS = {
   SP: { icon: '⚡', code: 'SP', alias: '행동가형 학습자', desc: '몸으로 직접 부딪히며 실전 감각으로 배우는 스타일이에요.', href: 'sp.html' }
 };
 
-const TOTAL_QUESTIONS = document.querySelectorAll('.question-card').length;
+const cards = Array.from(document.querySelectorAll('.question-card'));
+const TOTAL_QUESTIONS = cards.length;
+const prevBtn = document.getElementById('prevBtn');
+const submitBtn = document.getElementById('submitBtn');
+let currentIndex = 0;
 
 function updateProgress() {
   const answered = document.querySelectorAll('.question-card input:checked').length;
@@ -17,16 +21,36 @@ function updateProgress() {
   return answered;
 }
 
-document.querySelectorAll('.question-card').forEach(card => {
+function showQuestion(index) {
+  currentIndex = index;
+  cards.forEach((card, i) => card.classList.toggle('active', i === index));
+  prevBtn.style.display = index > 0 ? 'inline-flex' : 'none';
+  const isLast = index === TOTAL_QUESTIONS - 1;
+  submitBtn.style.display = (isLast && cards[index].querySelector('input:checked')) ? 'inline-flex' : 'none';
+  document.getElementById('formError').textContent = '';
+}
+
+cards.forEach((card, index) => {
   card.querySelectorAll('.option').forEach(opt => {
     opt.addEventListener('click', () => {
       card.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
       opt.classList.add('selected');
       opt.querySelector('input').checked = true;
       updateProgress();
+      if (index < TOTAL_QUESTIONS - 1) {
+        setTimeout(() => showQuestion(index + 1), 350);
+      } else {
+        submitBtn.style.display = 'inline-flex';
+      }
     });
   });
 });
+
+prevBtn.addEventListener('click', () => {
+  if (currentIndex > 0) showQuestion(currentIndex - 1);
+});
+
+showQuestion(0);
 
 function buildBarRow(code, score, isTop) {
   const row = document.createElement('div');
@@ -35,7 +59,7 @@ function buildBarRow(code, score, isTop) {
     '<span class="label">' + code + '</span>' +
     '<span class="result-bar-track"><span class="result-bar-fill" style="width:0%"></span></span>' +
     '<span class="val">' + Math.round(score) + '%</span>';
-  if (isTop) row.style.color = 'var(--purple-dark)';
+  if (isTop) row.style.color = 'var(--pink-dark)';
   const fill = row.querySelector('.result-bar-fill');
   requestAnimationFrame(() => { fill.style.width = score + '%'; });
   return row;
@@ -73,7 +97,9 @@ function renderResultCard(containerId, candidates, scores, topCode) {
 function calculateResults() {
   const counts = { N: 0, S: 0, T: 0, F: 0, J: 0, P: 0 };
   document.querySelectorAll('.question-card input:checked').forEach(input => {
-    counts[input.value]++;
+    const letter = input.value[0];
+    const weight = parseInt(input.value[1], 10);
+    counts[letter] += weight;
   });
 
   const nsTotal = counts.N + counts.S;
@@ -129,6 +155,7 @@ document.getElementById('retakeBtn').addEventListener('click', () => {
   document.getElementById('progressBar').style.width = '0%';
   document.getElementById('resultSection').style.display = 'none';
   document.getElementById('testForm').style.display = 'block';
+  showQuestion(0);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 

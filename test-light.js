@@ -35,7 +35,7 @@ function buildBarRow(code, score, isTop) {
     '<span class="label">' + code + '</span>' +
     '<span class="result-bar-track"><span class="result-bar-fill" style="width:0%"></span></span>' +
     '<span class="val">' + Math.round(score) + '%</span>';
-  if (isTop) row.style.color = 'var(--purple-dark)';
+  if (isTop) row.style.color = 'var(--pink-dark)';
   const fill = row.querySelector('.result-bar-fill');
   requestAnimationFrame(() => { fill.style.width = score + '%'; });
   return row;
