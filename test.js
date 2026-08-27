@@ -132,6 +132,13 @@ function calculateResults() {
   const g1 = renderResultCard('result1', ['NT', 'NF', 'ST', 'SF'], set1Scores, top1);
   const g2 = renderResultCard('result2', ['NJ', 'NP', 'SJ', 'SP'], set2Scores, top2);
 
+  if (typeof gtag === 'function') {
+    gtag('event', 'test_complete', {
+      group1: top1,
+      group2: top2
+    });
+  }
+
   document.getElementById('shareBtn').dataset.text =
     '나의 공부 유형은 [' + g1.code + '] ' + g1.alias + ' + [' + g2.code + '] ' + g2.alias + '! MBTI 공부법 연구소에서 나도 확인해보기';
 
